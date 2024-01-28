@@ -1,0 +1,210 @@
+{
+	"name": "Reaper-Logic",
+	"type": "OSC",
+	"path": "Software",
+	
+	"version": "1.0",
+	"description": "Allow you to control Ligic-Pro with chataigne",
+	"url":"https://github.com/ziginfo/LogicPro-Chataigne-Module.git",
+	"downloadURL": "https://github.com/ziginfo/LogicPro-Chataigne-Module/archive/refs/heads/main.zip",
+	
+	"hasInput": true,
+	"hasOutput": true, 
+
+	"hideDefaultCommands": false,
+	"hideDefaultParameters": [
+		"colorSendMode",
+		"autoRange",
+		"autoFeedback",
+		"input",
+		"useHierarchy",
+		"autoAdd",
+		"booleanSendMode"
+	],
+	
+	"defaults": {
+	
+		"OSC Input": {
+			"localPort" : 9000 },
+			
+		"OSC Outputs": {
+			"OSC Output": {
+				"local" : false,
+				"remoteHost" : "192.168.50.177",
+				"remotePort" : 7000,
+				"listenToFeedback":false } }
+	},
+	
+	"parameters": {
+		"type":"Container",
+		"stripIndex":{"type":"Integer", "min":0,"max":8}
+	},
+	
+	"scripts": ["reaperlogic.js"],
+	
+	"values": { },
+	
+	
+	
+	"commands": {
+	
+	"Master Volume" : {
+			"menu" : "Channel",
+			"callback" : "master_volume",
+			"parameters" : {
+					
+				"Fader Level": {
+					"type": "Float",
+					"default": 0.75, 
+					"min":0,
+					"max":1,
+					"useForMapping": true	} 
+			} },
+		
+		"Track Volume" : {
+			"menu" : "Channel",
+			"callback" : "volume",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":8,
+					"useForMapping": true	}, 
+					
+				"Fader Level": {
+					"type": "Float",
+					"default": 0.75, 
+					"min":0,
+					"max":1,
+					"useForMapping": true	} 
+			} },
+		
+		"Mute" : {
+			"menu" : "Channel",
+			"callback" : "mute",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":8,
+					"useForMapping": true	}, 
+					
+				"Mute on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+			
+		"Solo" : {
+			"menu" : "Channel",
+			"callback" : "solo",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":8,
+					"useForMapping": true	}, 
+					
+				"Solo on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+			
+		"Select" : {
+			"menu" : "Channel",
+			"callback" : "select",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":8,
+					"useForMapping": true	}, 
+					
+				"Select on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 	
+			} },
+			
+		"Solo-Reset" : {
+			"menu" : "TrackActions",
+			"callback" : "solo_reset"
+			},
+			
+		"Play" : {
+			"menu" : "PlayActions",
+			"callback" : "play"
+			},
+			
+		"Stop" : {
+			"menu" : "PlayActions",
+			"callback" : "stop"
+			},
+			
+		"Cycle" : {
+			"menu" : "PlayActions",
+			"callback" : "cycle"
+			},
+			
+		"Rec" : {
+			"menu" : "PlayActions",
+			"callback" : "rec"
+			},
+			
+		"Click" : {
+			"menu" : "PlayActions",
+			"callback" : "click"
+			},
+			
+			
+		"Rewind" : {
+			"menu" : "PlayActions",
+			"callback" : "rewind"
+			},
+			
+		"Forward" : {
+			"menu" : "PlayActions",
+			"callback" : "forward"
+			},
+			
+		"Bank back" : {
+			"menu" : "TrackActions",
+			"callback" : "bank_back"
+			},
+			
+		"Bank next" : {
+			"menu" : "TrackActions",
+			"callback" : "bank_next"
+			},
+			
+		"Track back" : {
+			"menu" : "TrackActions",
+			"callback" : "track_back"
+			},
+			
+		"Track next" : {
+			"menu" : "TrackActions",
+			"callback" : "track_next"
+			}
+
+
+
+
+		
+	}
+}
