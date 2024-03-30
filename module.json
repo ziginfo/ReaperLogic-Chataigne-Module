@@ -1,10 +1,10 @@
-{
+per{
 	"name": "Reaper-Logic",
 	"type": "OSC",
 	"path": "Software",
 	
-	"version": "1.0",
-	"description": "Allow you to control Ligic-Pro with chataigne",
+	"version": "1.1",
+	"description": "Allow you to control Reaper with chataigne",
 	"url":"https://github.com/ziginfo/ReaperLogic-Chataigne-Module",
 	"downloadURL": "https://github.com/ziginfo/ReaperLogic-Chataigne-Module/archive/refs/heads/main.zip",
 	
